@@ -62,25 +62,40 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:src="@drawable/ic_backspace_black_24dp"
+                style="@style/Widget.AppCompat.Button"
                 android:onClick="onClick" />
 
-            <Button
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/bt_operator"
-                android:text="/"
-                android:textSize="@dimen/textSizeCharacter"
-                android:onClick="onClick"/>
+                android:layout_weight="1">
 
-            <Button
+                <Button
+                    android:id="@+id/bt_operator"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_button"
+                    android:onClick="onClick"
+                    android:text="/"
+                    android:textSize="@dimen/textSizeCharacter" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@id/bt_operator"
-                android:text="x"
-                android:textSize="25sp"
-                android:onClick="onClick"/>
+                android:layout_weight="1">
+                <Button
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_button"
+                    android:id="@id/bt_operator"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="onClick"
+                    android:text="x"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -116,14 +131,20 @@
                 android:textSize="@dimen/textSizeCharacter"
                 android:onClick="onClick"/>
 
-            <Button
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@id/bt_operator"
-                android:text="+"
-                android:textSize="@dimen/textSizeCharacter"
-                android:onClick="onClick"/>
+                android:layout_weight="1">
+                <Button
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@id/bt_operator"
+                    android:text="+"
+                    android:textSize="@dimen/textSizeCharacter"
+                    android:onClick="onClick"/>
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -147,7 +168,7 @@
                 android:layout_weight="1"
                 android:onClick="onClick"
                 android:text="5"
-                android:textSize="@dimen/textSizeCharacter"/>
+                android:textSize="@dimen/textSizeCharacter" />
 
             <Button
                 android:layout_width="0dp"
@@ -158,14 +179,20 @@
                 android:textSize="@dimen/textSizeCharacter"
                 android:onClick="onClick"/>
 
-            <Button
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@id/bt_operator"
-                android:text="-"
-                android:textSize="@dimen/textSizeCharacter"
-                android:onClick="onClick"/>
+                android:layout_weight="1">
+                <Button
+                    android:layout_margin="5dp"
+                    android:background="@drawable/custom_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@id/bt_operator"
+                    android:text="-"
+                    android:textSize="@dimen/textSizeCharacter"
+                    android:onClick="onClick"/>
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout

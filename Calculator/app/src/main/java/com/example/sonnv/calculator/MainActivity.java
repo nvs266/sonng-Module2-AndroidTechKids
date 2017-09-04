@@ -1,12 +1,9 @@
 package com.example.sonnv.calculator;
 
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -32,7 +29,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvCurrent.setText("0");
         tvLast.setText("0");
         isCalculated = true;
-        btLastOperator = null;
+        if (btLastOperator != null) {
+            btLastOperator.setBackgroundResource(R.drawable.custom_button);
+            btLastOperator = null;
+        }
         isDouble = false;
     }
 
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             button = (Button) view;
         } catch (Exception ex) {
         }
+
         if (button != null) {
             switch (view.getId()) {
                 case R.id.bt_del:
@@ -73,17 +74,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             break;
                         }
                     }
-
                     if (btLastOperator != null) {
-                       tvLast.setText("" + calculate());
+                        String result = fmt(calculate());
+                        tvLast.setText("" + result);
+                        btLastOperator.setBackgroundResource(R.drawable.custom_button);
                     } else {
                         tvLast.setText(tvCurrent.getText());
                      }
-                    isCalculated = true;
                     btLastOperator = button;
+                    btLastOperator.setBackgroundResource(R.drawable.custom_pressed_button);
+                    isCalculated = true;
                     tvCurrent.setText("0");
                     isDouble = false;
-
                     break;
                 case R.id.bt_equal:
                     if (btLastOperator != null) {
@@ -91,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         tvCurrent.setScrollBarSize(20);
                         tvLast.setText(tvCurrent.getText());
                         tvCurrent.setText(result);
+                        btLastOperator.setBackgroundResource(R.drawable.custom_button);
                         btLastOperator = null;
                         isDouble = false;
                         isCalculated = true;
@@ -116,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private double calculate() {
         double numOne = Double.parseDouble(tvLast.getText().toString());
         double numTwo = Double.parseDouble(tvCurrent.getText().toString());
-        Log.d("So ", "calculate: " + numOne  + numTwo);
+
         switch (btLastOperator.getText().toString()) {
             case "+":
                 return (numOne + numTwo);
@@ -131,25 +134,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 return (numOne / numTwo);
             default:
-                break;
+                return 0;
         }
-        return 0;
     }
 
     private String fmt(double d) {
         if (d == (long) d) {
-            int t = String.format("%d", (long) d).indexOf('E');
-            if (t != -1) {
-                String result = String.format("%d", (long) d);
-                String s = "";
-                for (int i = t; i < result.length(); i++) {
-                    s += result.charAt(i);
-                }
-                int j = 16 - s.length();
-                if (j >= t) j = t - 1;
-                s = result.substring(0, j) + s;
-                return s;
-            }
             return String.format("%d", (long) d);
         } else {
             int t = String.format("%s", d).indexOf('E');
