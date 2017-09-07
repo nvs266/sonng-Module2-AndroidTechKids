@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef">
+    
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        app:cardBackgroundColor="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/item_padding"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/item_padding"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_bookmark_border_black_24dp"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
+        android:layout_marginStart="@dimen/item_padding"
+        android:layout_marginEnd="@dimen/item_padding"
+        android:layout_marginBottom="@dimen/item_padding">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:text="The Gift of the Magi"
+                android:textStyle="bold"
+                android:layout_marginTop="110dp"
+                android:layout_marginStart="@dimen/item_padding"
+                android:layout_marginEnd="@dimen/item_padding"
+                android:gravity="center"
+                android:textColor="#565656"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_author"
+                android:text="O. Henry"
+                android:textStyle="italic"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="@dimen/item_padding"
+                android:layout_marginEnd="@dimen/item_padding"
+                android:gravity="center"
+                android:textColor="#565656"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/tv_description"
+                android:text="This tender story -- one of the most famous titles in the short story genre -- is a must-read. The story is about a young couple and how they meet the challenge of buying each other a Christmas gifts when they don't have enough money. This sentimental tale has a moral lesson and is widely enjoyed during Christmastime and the holiday season."
+                android:layout_below="@+id/tv_author"
+                android:layout_marginStart="@dimen/item_padding"
+                android:layout_marginEnd="@dimen/item_padding"
+                android:gravity="center"
+                android:textColor="#565656"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="START READING"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:layout_margin="@dimen/item_padding"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="45dp" />
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_image"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:padding="@dimen/item_padding"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp">
+        
+        <ImageView
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/gift"/>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
