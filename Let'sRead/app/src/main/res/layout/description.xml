@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef">
+
+    <android.support.v7.widget.CardView
+        app:layout_heightPercent="40%"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="@color/colorPrimary">
+
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                app:layout_aspectRatio="100%"
+                app:layout_heightPercent="15%"
+                android:layout_margin="@dimen/item_padding"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
+
+            <ImageView
+                android:id="@+id/iv_bookmark"
+                app:layout_aspectRatio="100%"
+                app:layout_heightPercent="15%"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/item_padding"
+                android:src="@drawable/ic_bookmark_border_black_24dp"/>
+        </android.support.percent.PercentRelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_alignParentBottom="true"
+        app:layout_heightPercent="75%"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/item_padding"
+        android:layout_marginEnd="@dimen/item_padding"
+        android:layout_marginBottom="@dimen/item_padding"
+        app:cardBackgroundColor="#fff">
+
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="The Gift of the Magi"
+                android:id="@+id/tv_title"
+                app:layout_marginTopPercent="25%"
+                app:layout_widthPercent="90%"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_below="@+id/tv_title"
+                android:gravity="center"
+                android:textStyle="italic"
+                android:text="O. Henry"
+                android:id="@+id/tv_author"
+                app:layout_widthPercent="90%"
+                app:layout_marginTopPercent="1%"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_above="@+id/tv_start"
+                android:layout_below="@+id/tv_author"
+                android:gravity="center_horizontal"
+                android:text="This tender story &#45;&#45; one of the most famous titles in the short story genre &#45;&#45; is a must-read. The story is about a young couple and how they meet the challenge of buying each other a Christmas gifts when they don't have enough money. This sentimental tale has a moral lesson and is widely enjoyed during Christmastime and the holiday season."
+                android:id="@+id/tv_description"
+                app:layout_widthPercent="90%"
+                app:layout_marginTopPercent="1%"
+                app:layout_marginBottomPercent="2%"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/tv_start"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="START READING"
+                android:foregroundGravity="fill_vertical"
+                android:background="@color/colorPrimary"
+                app:layout_heightPercent="10%"
+                app:layout_widthPercent="90%"
+                android:layout_centerHorizontal="true"
+                app:layout_marginBottomPercent="3%"
+                android:layout_alignParentBottom="true"/>
+
+        </android.support.percent.PercentRelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        app:layout_heightPercent="28%"
+        app:layout_aspectRatio="95%"
+        app:layout_marginTopPercent="12%"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/gift"/>
+    </android.support.v7.widget.CardView>
+
+</android.support.percent.PercentRelativeLayout>
